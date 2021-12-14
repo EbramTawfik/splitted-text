@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:page_split/blocs/pageControlBloc.dart';
+import 'package:page_split/blocs/pageControlProvider.dart';
 import 'package:page_split/textPageView.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,8 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => PageControlBloc(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => PageControlProvider()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Home(),

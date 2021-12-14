@@ -1,12 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 
-abstract class SplittedText {
-  List<String> getSplittedText(Size pageSize, TextStyle textStyle, String text);
-}
-
-class SplittedTextImpl extends SplittedText {
-  @override
+class SplittedText {
   List<String> getSplittedText(
       Size pageSize, TextStyle textStyle, String text) {
     final List<String> _pageTexts = [];
